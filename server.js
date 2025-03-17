@@ -12,18 +12,15 @@ app.use(express.json());
 
 app.use(morgan("combined"));
 dbConnection;
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
+
 init(app);
 
-// Error handling middleware
-// app.use((err, req, res, next) => {
-//   const statusCode = err.statusCode || 500;
-//   res
-//     .status(statusCode)
-//     .json({ message: err.message, statusCode, errors: err.errors });
-// });
+app.use((err, req, res, next) => {
+  const statusCode = err.statusCode || 500;
+  res
+    .status(statusCode)
+    .json({ message: err.message, statusCode, errors: err.errors });
+});
 
 const port = process.env.PORT || 3010;
 app.listen(port, () => {
