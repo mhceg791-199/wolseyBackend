@@ -21,6 +21,9 @@ init(app);
 //     .status(statusCode)
 //     .json({ message: err.message, statusCode, errors: err.errors });
 // });
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
+});
 const port = process.env.PORT || 3010;
 app.listen(port, () => {
   console.log(`server is running on port : ${port}`);
