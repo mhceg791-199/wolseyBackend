@@ -5,7 +5,7 @@ import sendEmail from "../../../utilits/sendEmail/sendEmail.js";
 import candidateSubmissionTemplate from "../../../utilits/sendEmail/templetes/candidateSubmissionTemplate.js";
 
 const createcandidate = catchAsyncError(async (req, res, next) => {
-  req.body.cv = `http://92.113.31.133:3010//uploads/cv/${req.files.cv[0].filename}`;
+  req.body.cv = `http://92.113.31.133:3010/uploads/cv/${req.files.cv[0].filename}`;
 
   let result = new candidateModel(req.body);
   await result.save();
