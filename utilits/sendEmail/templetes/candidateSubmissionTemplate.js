@@ -101,8 +101,7 @@ function candidateSubmissionTemplate({
             <p><strong>Full Name:</strong>${firstName} ${lastName}</p>
             <p><strong>Email Address:</strong> ${email}</p>
             <p><strong>Phone Number:</strong> ${phone}</p>
-     <p><strong>CV:</strong> <a href="${cv.url}" download>Download CV</a></p>
-
+            <p><strong>CV:</strong> <a href="${cv}" download>Download CV</a></p>
             <p><strong>Message from Candidate:</strong> ${message}</p>
           </div>
         </div>
