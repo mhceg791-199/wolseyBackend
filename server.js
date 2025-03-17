@@ -21,7 +21,7 @@ init(app);
 //     .status(statusCode)
 //     .json({ message: err.message, statusCode, errors: err.errors });
 // });
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3010;
 app.listen(port, () => {
   console.log(`server is running on port : ${port}`);
 });
