@@ -4,7 +4,7 @@ import transporter from "./transported.js";
 const sendEmail = async (html) => {
   const mailOptions = {
     from: `"Wolsey"`,
-    to: "info@wolsey.ca",
+    to: "minanagykhalefa@gmail.com",
     subject: "Message From Wolsey Website",
     html,
   };
