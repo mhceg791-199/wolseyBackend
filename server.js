@@ -7,12 +7,15 @@ import dbConnection from "./DB/dbConnection.js";
 configDotenv();
 const app = express();
 
-app.use(cors({
-  origin: "http://wolsey.com", // Allow frontend domain
-  methods: "GET, POST, PUT, DELETE, OPTIONS",
-  allowedHeaders: "Content-Type, Authorization",
-  credentials: true,
-}));app.use(express.json());
+app.use(
+  cors({
+    origin: "http://wolsey.com", // Allow frontend domain
+    methods: "GET, POST, PUT, DELETE, OPTIONS",
+    allowedHeaders: "Content-Type, Authorization",
+    credentials: true,
+  })
+);
+app.use(express.json());
 
 app.use(morgan("combined"));
 dbConnection;
@@ -27,6 +30,6 @@ app.use((err, req, res, next) => {
 });
 
 const port = process.env.PORT || 3010;
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`server is running on port : ${port}`);
 });
