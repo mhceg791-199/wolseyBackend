@@ -19,9 +19,7 @@ app.use(express.json());
 
 app.use(morgan("combined"));
 dbConnection;
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
+
 init(app);
 
 app.use((err, req, res, next) => {
