@@ -1,11 +1,48 @@
 import EmailTemplate from "./templetes/EmailTemplate.js";
 import transporter from "./transported.js";
 
-const sendEmail = async (html) => {
+const sendEmail = async (html, websiteName) => {
+  const handelEmails = (websiteName) => {
+    if (websiteName == "wolsey") {
+      return {
+        from: "wolsey",
+        to: "nagykhalefa9@gmail.com",
+        subject: "Message From Wolsey Website",
+      };
+    }
+    if (websiteName == "MHCEG") {
+      return {
+        from: "MHCEG",
+        to: "minanagykhalefa@gmail.com",
+        subject: "Message From MHCEG Website",
+      };
+    }
+    if (websiteName == "MHC") {
+      return {
+        from: "MHC",
+        to: "minabussiness3@gmail.com",
+        subject: "Message From MHC Website",
+      };
+    }
+    if (websiteName == "ARUP") {
+      return {
+        from: "ARUP",
+        to: "minanagykhalefa@gmail.com",
+        subject: "Message From ARUP Website",
+      };
+    }
+    return;
+  };
+
+  const { from, to, subject } = handelEmails(websiteName);
+  console.log("====================================");
+  console.log(handelEmails(websiteName));
+  console.log(websiteName);
+  console.log("====================================");
   const mailOptions = {
-    from: `"Wolsey"`,
-    to: "info@wolsey.ca",
-    subject: "Message From Wolsey Website",
+    from,
+    to,
+    subject,
     html,
   };
   await transporter

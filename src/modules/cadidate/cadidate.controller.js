@@ -6,13 +6,13 @@ import candidateSubmissionTemplate from "../../../utilits/sendEmail/templetes/ca
 
 const createcandidate = catchAsyncError(async (req, res, next) => {
   req.body.cv = `http://92.113.31.133:3010/uploads/cv/${req.files.cv[0].filename}`;
-
+  const { websiteName } = req.body;
   let result = new candidateModel(req.body);
   await result.save();
   console.log("====================================");
   console.log(`result = ${result}`);
   console.log("====================================");
-  await sendEmail(candidateSubmissionTemplate(result));
+  await sendEmail(candidateSubmissionTemplate(result), websiteName);
 
   res.status(200).send({ message: "success", result });
 });
