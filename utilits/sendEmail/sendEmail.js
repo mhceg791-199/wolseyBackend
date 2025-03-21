@@ -6,28 +6,28 @@ const sendEmail = async (html, websiteName) => {
     if (websiteName == "wolsey") {
       return {
         from: "wolsey",
-        to: "nagykhalefa9@gmail.com",
+        to: "info@wolsey.ca",
         subject: "Message From Wolsey Website",
       };
     }
     if (websiteName == "MHCEG") {
       return {
         from: "MHCEG",
-        to: "minanagykhalefa@gmail.com",
+        to: "info@mhceg.com",
         subject: "Message From MHCEG Website",
       };
     }
     if (websiteName == "MHC") {
       return {
         from: "MHC",
-        to: "minabussiness3@gmail.com",
+        to: "info@mosaicholding.com",
         subject: "Message From MHC Website",
       };
     }
     if (websiteName == "ARUP") {
       return {
         from: "ARUP",
-        to: "minanagykhalefa@gmail.com",
+        to: "info@adal.ca",
         subject: "Message From ARUP Website",
       };
     }
