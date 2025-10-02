@@ -30,3 +30,4 @@ schema.pre("find", function (next) {
 const projectModel = mongoose.model("Project", schema);
 
 export default projectModel;
+//company
